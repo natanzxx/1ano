@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 Ano Juntos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ef7474;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #ffffff;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .video {
+            width: 100%;
+            max-width: 800px;
+            max-height: 450px; 
+            object-fit: cover; 
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff6347;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #e5533e;
+        }
+        #message {
+            display: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz nosso dia meu mozinho!!!</h1>
+        <video id="videoPlayer" class="video" controls>
+            <source src="Design sem nome.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <button class="button" onclick="toggleMessage()">ABRE AQUI ENQUANTO ASSISTE</button>
+        <div id="message">
+            <p>Senhorita, Amanda Alves de Souza:</p>
+            <p>Primeiramente eu gostaria de dizer o quanto eu amo você, mas como você ja sabe, o meu amor por você não da pra ser comparado a nada nesse mundo e muito menos expressado com apenas palavras. Então fique bem sabendo que esse amor é muito muito muito grande!</p>
+            <p>Amanhã comemoramos 1 ano de namoro e você não tem ideia do quanto isso é gratificante pra mim. Eu simplesmente tenho a mulher mais linda desse mundo só pra mim.</p>
+            <p>Obrigado por ser quem você é e por tornar minha vida tão especial. Você é a pessoa mais incrível que ja vi na vida, ninguém se compara a você com esse seu jeito meigo (e um pouco bruto as vezes kkkk e que eu tbm amo dms), carinhoso e com esse seu coração enorme que me encanta todos os dias.  </p>
+            <p>A sua bondade e seu coração puro é de longe a sua característica mais linda. Eu fico completamente encantado quando você fala das criançinhas no trabalho e já fico pensando em você brincando com a nossa..</p>
+            <p>Nesse exato momento são 22:03 e estou voltando aqui só pra me desculpar por não ter mandado isso antes, é que ainda faltava alguns detalhes (o video) KKKKKKKKKK. Então desculpe o seu bichinho, ele te ama muito</p>
+            <p>Eu ia te chamar pra ver um filme e a gente fazer alguma coisa mas você ta com uma dorzinha de cabeça... então é isso, EU TE AMO DMS MINHA GOSTOSA, ESSE É APENAS O PRIMEIRO ANO, FALTA 106 AINDA, CUIDA</p>
+        </div>
+        <button class="button" onclick="toggleFullScreen()">Assistir em Tela Cheia</button>
+    </div>
+
+    <script>
+        function toggleMessage() {
+            const messageDiv = document.getElementById('message');
+            if (messageDiv.style.display === 'none' || messageDiv.style.display === '') {
+                messageDiv.style.display = 'block';
+            } else {
+                messageDiv.style.display = 'none';
+            }
+        }
+
+        function toggleFullScreen() {
+            const video = document.getElementById('videoPlayer');
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) { // Firefox
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) { // IE/Edge
+                video.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+</html>
